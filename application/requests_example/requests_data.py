@@ -6,9 +6,8 @@ from application.config.paths import FILES_OUTPUT_PATH
 from application.logging.loggers import get_core_logger
 
 
-def to_requests_data() -> None:
+def to_requests_data(url: str = None) -> None:
     logger = get_core_logger()
-    url = "http://api.open-notify.org/astros.json"
 
     path = FILES_OUTPUT_PATH.joinpath("output.json")
 
@@ -16,6 +15,4 @@ def to_requests_data() -> None:
         response = session.get(url)
         logger.info(f"{response}")
         response_json = response.json()
-        logger.info(f"{response_json=}")
-
         path.write_text(json.dumps(response_json, indent=2))
