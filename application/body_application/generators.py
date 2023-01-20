@@ -14,3 +14,7 @@ def generate_user() -> User:
 def generate_users(amount: int = 100) -> Iterator[User]:
     for _ in range(amount):
         yield generate_user()
+
+
+def generate_text() -> Faker:
+    return fake.text().replace(". ", ".\n")
