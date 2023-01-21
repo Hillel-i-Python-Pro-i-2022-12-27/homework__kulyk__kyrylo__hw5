@@ -1,4 +1,5 @@
 import json
+import urllib.request
 
 import requests
 
@@ -16,3 +17,10 @@ def to_requests_data(url: str = None) -> None:
         logger.info(f"{response}")
         response_json = response.json()
         path.write_text(json.dumps(response_json, indent=2))
+
+
+def to_download_file(url: str = None) -> None:
+    path_to_file = FILES_OUTPUT_PATH.joinpath("output.csv")
+    downloaded_file = urllib.request.urlopen(url).read()
+    with open(path_to_file, "wb") as file:
+        file.write(downloaded_file)
