@@ -19,7 +19,6 @@ def to_calculation_average(name_file: str = None) -> dict:
 
 #
 def output_after_processing_csv(output_info: dict = None) -> None:
-    # output_info = output_info
     return print(
         f"""After processing the csv-file, we got the following values:
 Average height of people: {output_info["average_height_in_cm"]} cm.
