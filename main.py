@@ -13,7 +13,7 @@ def main() -> None:
     to_write_file_txt(name_file="users", amount_users=5)
     to_requests_data(url="http://api.open-notify.org/astros.json")
     to_processing_response("output")
-    to_download_file("https://drive.google.com/u/0/uc?id=1yM0a4CSf0iuAGOGEljdb7qcWyz82RBxl&export=download")
+    to_download_file("https://drive.google.com/u/0/uc?id=1kQ8mFcgGpGK4XRtnWQdWf-y10Ru2UQdB&export=download")
     to_calculation_average(name_file="output")
     output_after_processing_csv(to_calculation_average(name_file="output"))
 
